@@ -1,0 +1,5 @@
+
+[
+java:S32524"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÝÉ¥Ã
+^
+java:S19053"<Remove this unnecessary cast to "ElasticsearchSinkFunction".(£—¡øýÿÿÿÿ8–úÍÏò.

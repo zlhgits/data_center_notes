@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bloom_fielter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cep" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elk" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/file_rw" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink" charset="UTF-8" />
+  </component>
+</project>

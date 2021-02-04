@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zlh</groupId>
+    <artifactId>data_center_notes</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>elk</module>
+        <module>cep</module>
+        <module>bloom_fielter</module>
+        <module>file_rw</module>
+        <module>db</module>
+        <module>flink</module>
+    </modules>
+
+    <issueManagement>
+        <system>Redmine</system>
+        <url>http://192.168.50.97:81/redmine/projects/data_center_notes/issues</url>
+    </issueManagement>
+
+    <organization>
+        <name>Zlh Tech</name>
+        <url>https://my.oschina.net/zlhblogs</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Zlh Close Source License</name>
+        </license>
+    </licenses>
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>MAVEN LOCAL</name>
+            <url>http://192.168.50.96:8081/repository/maven-public</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun</id>
+            <name>Maven Alibaba Mirror</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <maven.plugin.version>2.7</maven.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <flink.version>1.9.0</flink.version>
+        <flink-connector>1.7.0</flink-connector>
+        <elasticsearch.version>6.7.1</elasticsearch.version>
+        <mysql.version>5.1.47</mysql.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <jedis.version>2.9.0</jedis.version>
+        <commons-pool2.version>2.7.0</commons-pool2.version>
+        <lombok.version>1.18.8</lombok.version>
+        <com.jayway.jsonpath.version>2.2.0</com.jayway.jsonpath.version>
+        <ck.version>0.2.4</ck.version>
+        <async.client.version>2.10.4</async.client.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.jayway.jsonpath</groupId>
+                <artifactId>json-path</artifactId>
+                <version>${com.jayway.jsonpath.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+            <!--flink -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-elasticsearch6_2.11</artifactId>
+                <version>${flink-connector}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>force-shading</artifactId>
+                        <groupId>org.apache.flink</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>slf4j-api</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                        <groupId>org.elasticsearch.client</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>log4j-api</artifactId>
+                        <groupId>org.apache.logging.log4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-jdbc_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-planner_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-api-java-bridge_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-scala_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-common</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!--aerospike-->
+            <dependency>
+                <groupId>com.aerospike</groupId>
+                <artifactId>aerospike-client</artifactId>
+                <version>4.4.8</version>
+            </dependency>
+            <!--  elasticsearch maven -->
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <!--mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- Fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- Redis-Jedis -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${maven.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+                <configuration>
+                    <newVersion>1.0-Beta</newVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <developers>
+        <developer>
+            <name>lh.z</name>
+            <email>***@163.com</email>
+            <url>https://my.oschina.net/zlhblogs</url>
+            <roles>
+                <role>Project Manager</role>
+                <role>Project Leader</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>阿伦</name>
+            <roles>
+                <role>Notes All Developer</role>
+            </roles>
+        </developer>
+    </developers>
+</project>

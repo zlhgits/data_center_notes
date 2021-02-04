@@ -1,0 +1,24 @@
+
+>	java:S1082")Either remove or fill this block of code.(ï­£Ä
+U	java:S106{"9Replace this use of System.out or System.err by a logger.(’µÚ•8æ‹¹Ïò.
+]	java:S125"<This block of commented-out lines of code should be removed.(ƒìýÐûÿÿÿÿ8ªæ¾Ïò.
+E
+java:S2093*"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+c
+java:S22591"HA "NullPointerException" could be thrown; "csvPrinter" is nullable here.(›™‚´þÿÿÿÿ
+N	java:S106U"9Replace this use of System.out or System.err by a logger.(Â‘×«
+D
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw
+‚
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø
+=	java:S108[")Either remove or fill this block of code.(Éò§+
+E
+java:S2093?"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+F	java:S108†")Either remove or fill this block of code.(ï­£Ä8æñ·Ïò.
+L
+java:S2093q"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8æñ·Ïò.
+F	java:S108€")Either remove or fill this block of code.(ï­£Ä8æñ·Ïò.
+N	java:S106."9Replace this use of System.out or System.err by a logger.(¢Âìå
+E
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ
+=	java:S108`")Either remove or fill this block of code.(Éò§+

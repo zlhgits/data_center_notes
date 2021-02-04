@@ -1,0 +1,46 @@
+
+d
+java:S2095¦"HUse try-with-resources or close this "Connection" in a "finally" clause.(İ‰úêùÿÿÿÿ
+c
+java:S1192"MDefine a constant instead of duplicating this literal "alter table " 4 times.(Ì¥óÊ
+c
+java:S1192"MDefine a constant instead of duplicating this literal " add column " 4 times.(Ì¥óÊ
+\	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(Ä™Ì–
+Q	java:S125 "<This block of commented-out lines of code should be removed.(ïÌ¡I
+K
+java:S1948 "0Make "connectionList" transient or serializable.(†²şşÿÿÿÿ
+c
+java:S2095§"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ
+u
+java:S1149Å"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(’é‡
+E
+java:S3740t"/Provide the parametrized type for this generic.(»ò¦
+l	java:S117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚¾¯ëùÿÿÿÿ
+D
+java:S1068")Remove this unused "types" private field.(¹Ê¥èúÿÿÿÿ
+`
+java:S3252H"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ˆªñÿÿÿÿÿ
+{
+java:S1149Ã"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".( Ö×üÿÿÿÿ
+R	java:S125­"<This block of commented-out lines of code should be removed.(äŒŠ¢
+f
+java:S2095´"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÍÄë
+]
+java:S2095j"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(“ÜÙÕ
+V
+java:S2259"@A "NullPointerException" could be thrown; "sb" is nullable here.(Ì¥óÊ
+^
+java:S1192"HDefine a constant instead of duplicating this literal " String" 4 times.(Ì¥óÊ
+4
+java:S2119Ş"Save and re-use this "Random".(¼İÅf
+J
+java:S1948!"/Make "statementList" transient or serializable.(ÂÍÍúøÿÿÿÿ
+R
+java:S1948"7Make "preparedStatementList" transient or serializable.(Ìøãöúÿÿÿÿ
+^
+java:S1192"HDefine a constant instead of duplicating this literal " after " 4 times.(Ì¥óÊ
+k	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñû„³ıÿÿÿÿ
+^
+java:S2583~"CChange this condition so that it does not always evaluate to "true"(·Š•ğüÿÿÿÿ
+m
+java:S3776`"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Ö‡©ßøÿÿÿÿ
